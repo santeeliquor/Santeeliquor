@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Spirits & Liquor Store | [Santee Discount Liquor]</title>
+    <meta name="description" content="Discover the finest wines, spirits, and craft beers at [Your Store Name]. Fast delivery and expert recommendations.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f8f9fa;
+        }
+        .hero-section {
+            background: url('https://via.placeholder.com/1920x600') center/cover;
+            color: white;
+            padding: 100px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .product-card {
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .age-gate {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Age Verification Popup -->
+    <div id="ageGate" class="age-gate d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <h2>Are you 21 or older?</h2>
+            <button onclick="verifyAge(true)" class="btn btn-success me-2">Yes</button>
+            <button onclick="verifyAge(false)" class="btn btn-danger">No</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">🍷 [Your Store Name]</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4">Welcome to [Your Store Name]</h1>
+            <p class="lead">Your Destination for Premium Spirits</p>
+            <a href="#products" class="btn btn-light btn-lg">Shop Now</a>
+        </div>
+    </header>
+
+    <!-- Product Showcase -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="Whiskey">
+                        <div class="card-body">
+                            <h5 class="card-title">Premium Whiskey</h5>
+                            <p class="card-text">Aged 12 years, rich and smooth.</p>
+                            <p class="text-muted">$49.99</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more product cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 [Your Store Name]. Must be 21+ to purchase.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Age Verification
+        window.onload = () => document.getElementById('ageGate').style.display = 'flex';
+        
+        function verifyAge(isAdult) {
+            if (isAdult) {
+                document.getElementById('ageGate').style.display = 'none';
+            } else {
+                window.location.href = 'https://www.example.com/exit';
+            }
+        }
+    </script>
+</body>
+</html>
